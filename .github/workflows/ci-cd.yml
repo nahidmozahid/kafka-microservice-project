@@ -2,14 +2,14 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main]
+    branches: main
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: [order-service, notification-service]
+        service: order-service, notification-service
 
     steps:
       - name: Checkout code
@@ -26,4 +26,4 @@ jobs:
         with:
           context: ./${{ matrix.service }}
           push: true
-          tags: your-dockerhub-username/${{ matrix.service }}:latest
+          tags: nahid7846/${{ matrix.service }}:latest
