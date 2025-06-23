@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: order-service, notification-service
+        service: [order-service , notification-service]
 
     steps:
       - name: Checkout code
